@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  font-size: var(--texto-cuerpo);
+  font-weight: var(--peso-regular);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, p, figure {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--texto-h1);
+  font-weight: var(--peso-bold);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--texto-h2);
+  font-weight: var(--peso-semi);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: var(--texto-h3);
+  font-weight: var(--peso-semi);
+  line-height: 1.3;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.contenedor {
+  max-width: var(--ancho-contenedor);
+  margin: 0 auto;
+  padding: 0 var(--esp-10);
+}
+
+/* Mantiene el footer abajo aunque la vista tenga poco contenido. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
