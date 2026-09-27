@@ -19,26 +19,6 @@ instalación de dependencias.
 - JavaScript (ES5+, sin frameworks)
 - localStorage para persistencia
 
-## Estructura
-
-```
-technews/
-├─ index.html          Inicio
-├─ noticias.html       Catálogo con filtros por categoría
-├─ detalle.html        Detalle de una noticia
-├─ favoritos.html      Noticias guardadas
-├─ gestionar.html      Creación y eliminación de noticias
-├─ contacto.html       Formulario con validaciones
-├─ css/                Variables, base, layout, componentes y ajustes por vista
-├─ js/
-│  ├─ data/            Catálogo inicial de noticias
-│  ├─ core/            Acceso a localStorage y utilidades del DOM
-│  ├─ services/        Lógica de noticias y favoritos
-│  ├─ components/      Generación del marcado reutilizable
-│  └─ pages/           Controlador de cada vista
-└─ img/noticias/       Imágenes del catálogo
-```
-
 ## Funcionalidades
 
 | Vista | Descripción |
