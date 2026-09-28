@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creación y eliminación de noticias de la plataforma.">
+  <title>TechNews | Gestionar noticias</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/paginas.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor header__interior">
+      <a class="header__logo" href="index.html">TechNews</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__enlace" href="index.html">Inicio</a>
+        <a class="nav__enlace" href="noticias.html">Noticias</a>
+        <a class="nav__enlace" href="favoritos.html">Favoritos</a>
+        <a class="nav__enlace" href="gestionar.html">Gestionar</a>
+        <a class="nav__enlace" href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <div class="contenedor dos-columnas dos-columnas--crud">
+
+        <form class="panel" id="form-noticia" novalidate>
+          <h2 style="margin-bottom: var(--esp-3);">Crear nueva noticia</h2>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-titulo">Título *</label>
+            <input class="campo__control" type="text" id="campo-titulo" name="titulo" placeholder="Título de la noticia">
+            <span class="campo__mensaje"></span>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-categoria">Categoría *</label>
+            <select class="campo__control" id="campo-categoria" name="categoria"></select>
+            <span class="campo__mensaje"></span>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-imagen">URL de imagen</label>
+            <input class="campo__control" type="text" id="campo-imagen" name="imagen" placeholder="img/noticias/ejemplo.jpg">
+            <span class="campo__mensaje"></span>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-resumen">Descripción *</label>
+            <textarea class="campo__control" id="campo-resumen" name="resumen" placeholder="Resumen breve de la noticia"></textarea>
+            <span class="campo__mensaje"></span>
+          </div>
+
+          <div style="display: flex; gap: var(--esp-1);">
+            <button class="btn btn--primario btn--bloque" type="submit">Guardar noticia</button>
+            <button class="btn btn--secundario" type="button" id="btn-cancelar">Cancelar</button>
+          </div>
+
+          <p class="alerta alerta--exito" id="aviso-creada" style="margin-top: var(--esp-2);" hidden>
+            La noticia se creó correctamente.
+          </p>
+        </form>
+
+        <div>
+          <div class="seccion__cabecera">
+            <h2>Noticias publicadas</h2>
+            <span class="card__resumen" id="contador-registros"></span>
+          </div>
+
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpo-tabla"></tbody>
+          </table>
+
+          <p class="alerta alerta--info" style="margin-top: var(--esp-2);">
+            Al eliminar se solicita confirmación. Los datos persisten en el navegador.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__interior">
+      <div class="footer__columna">
+        <p class="footer__titulo">TechNews</p>
+        <p class="footer__subtitulo">Periódico digital — Proyecto académico</p>
+      </div>
+      <div class="footer__columna footer__columna--contacto">
+        <p class="footer__etiqueta">Contacto</p>
+        <p class="footer__dato">contacto@technews.com</p>
+        <p class="footer__dato">+57 300 000 0000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/core/app.js"></script>
+  <script src="js/data/noticias.data.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/dom.js"></script>
+  <script src="js/services/noticias.service.js"></script>
+  <script src="js/services/favoritos.service.js"></script>
+  <script src="js/components/navegacion.component.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/components/fila-tabla.component.js"></script>
+  <script src="js/pages/gestionar.page.js"></script>
+</body>
+</html>
